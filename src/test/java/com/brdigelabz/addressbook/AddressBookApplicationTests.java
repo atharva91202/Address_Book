@@ -1,4 +1,4 @@
-package com.brdigelabz.addressbook.addressBook;
+package com.brdigelabz.addressbook;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
