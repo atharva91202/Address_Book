@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AddressBookService {
     private final List<Address> addressBook = new ArrayList<>();
-    private long idCounter = 1;
+    private long idCounter = 1; // Simulating auto-increment ID
 
     public String addAddress(AddressDTO addressDTO) {
         Address address = new Address(idCounter++, addressDTO.getName(), addressDTO.getPhone(), addressDTO.getEmail());
@@ -20,11 +20,7 @@ public class AddressBookService {
         if (addressBook.isEmpty()) {
             return "No addresses found";
         }
-        StringBuilder response = new StringBuilder("All Addresses:\n");
-        for (Address address : addressBook) {
-            response.append(address).append("\n");
-        }
-        return response.toString();
+        return "All Addresses: " + addressBook.toString();
     }
     public String getAddressById(long id) {
         for (Address address : addressBook) {
